@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  day3:
+    image: avian2/fimpp
+    volumes:
+      - '.:/day3'
+    command: /day3/sol.fimpp

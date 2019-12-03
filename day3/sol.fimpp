@@ -1,0 +1,310 @@
+Dear Princess Celestia: Main Class.
+
+I learned to convert with char:
+    When char was equal to "0":
+        Did you know that result is 0?
+    That's what I did.
+    When char was equal to "1":
+        Did you know that result is 1?
+    That's what I did.
+    When char was equal to "2":
+        Did you know that result is 2?
+    That's what I did.
+    When char was equal to "3":
+        Did you know that result is 3?
+    That's what I did.
+    When char was equal to "4":
+        Did you know that result is 4?
+    That's what I did.
+    When char was equal to "5":
+        Did you know that result is 5?
+    That's what I did.
+    When char was equal to "6":
+        Did you know that result is 6?
+    That's what I did.
+    When char was equal to "7":
+        Did you know that result is 7?
+    That's what I did.
+    When char was equal to "8":
+        Did you know that result is 8?
+    That's what I did.
+    When char was equal to "9":
+        Did you know that result is 9?
+    That's what I did.
+That's about to convert with result.
+
+I learned about parsing with str:
+    Today I found a book named result.
+    Did you know that result counter is 1?
+    Did you know that letter is "missing"?
+    Did you know that length is 0?
+    Did you know that x is 0?
+    Did you know that y is 0?
+    Did you know that id is 1?
+    Arr did letters of str.
+    On the first page of the book arr I read about char, because this will be the current symbol.
+
+    I did this while char was something:
+        When char was equal to ",":
+            I found a book titled direction.
+            On the 1st page of direction I wrote x.
+            On the 2nd page of direction I noted y.
+            When letter was equal to "L":
+                x did the difference of x and length.
+            That's what I did.
+            When letter was equal to "R":
+                x did the sum of x and length.
+            That's what I did.
+            When letter was equal to "D":
+                y did the difference of y and length.
+            That's what I did.
+            When letter was equal to "U":
+                y did the sum of y and length.
+            That's what I did.
+            On the 3rd page of direction I wrote x.
+            On the 4th page of direction I noted y.
+            On the page numbered by result counter of result I scribbled what I knew about direction.
+            Did you know that letter is "missing"?
+            Did you know that length is 0?
+            result counter got one more.
+        In the end, I did this instead:
+            When letter was equal to "missing":
+                Did you know that letter is char?
+            In the end, I did this instead:
+                num did to convert of char.
+                length did the product of ten and length.
+                length did the sum of length and num.
+            That's what I did.
+        That's what I did.
+
+        id got one more.
+        On the page numbered by id of arr I read about char.
+    That's what I did.
+
+    result counter did the difference of result counter and one.
+    I found a book titled final result.
+    On the first page of final result I wrote result counter.
+    On the second page of final result I wrote result.
+
+That's about parsing with final result.
+
+I learned about line type with first x, first y, second x and second y:
+    When first x is equal to second x:
+        Did you know line type is "V"?
+    In the end, I did this instead:
+        Did you know line type is "H"?
+    That's what I did.
+That's about line type.
+
+I learned about intersection with red and blue:
+    On the first page of red I read about first red x.
+    On the second page of red I read about first red y.
+    On the third page of red I read about second red x.
+    On the fourth page of red I read about second red y.
+    On the first page of blue I read about first blue x.
+    On the second page of blue I read about first blue y.
+    On the third page of blue I read about second blue x.
+    On the fourth page of blue I read about second blue y.
+    Red type did line type of first red x, first red y, second red x and second red y.
+    Blue type did line type of first blue x, first blue y, second blue x and second blue y.
+
+    When first red x has more than second red x or first red y has more than second red y:
+        By the way, this will swap the two red points.
+        Did you know that temp x is second red x?
+        Did you know that temp y is second red y?
+        Did you know that second red x is first red x?
+        Did you know that second red y is first red y?
+        Did you know that first red x is temp x?
+        Did you know that first red y is temp y?
+    That's what I did.
+    
+    When first blue x has more than second blue x or first blue y has more than second blue y:
+        By the way, this will swap the two blue points.
+        Did you know that temp x is second blue x?
+        Did you know that temp y is second blue y?
+        Did you know that second blue x is first blue x?
+        Did you know that second blue y is first blue y?
+        Did you know that first blue x is temp x?
+        Did you know that first blue y is temp y?
+    That's what I did.
+
+    Did you know that point is nothing?
+    When Red type was equal to "H":
+        When first red x had not more than first blue x, first blue x had not more than second red x, first blue y had not more than first red y and first red y had not more than second blue y:
+            I found a book titled point.
+            On the first page of point I scribbled first blue x.
+            On the second page of point I noted first red y.
+        That's what I did.
+    In the end, I did this instead:
+        When first red y had not more than first blue y, first blue y had not more than second red y, first blue x had not more than first red x and first red x had not more than second blue x:
+            I found a book titled point.
+            On the first page of point I noted first red x.
+            On the second page of point I scribbled first blue y. 
+        That's what I did.
+    That's what I did.
+That's about intersection with point.
+
+I learned about intersections with red segments and blue segments:
+    On the first page of red segments I read about red count.
+    On the first page of blue segments I read about blue count.
+    On the second page of red segments I read about red segments.
+    On the second page of blue segments I read about blue segments.
+    I found a book titled points.
+    Did you know point counter is 1?
+    Did you know red counter is 1?
+    I did this while red counter had not more than red count:
+        Did you know blue counter is 1?
+        I did this while blue counter had not more than blue count:
+            On the page numbered by red counter of red segments I read about red segment.
+            On the page numbered by blue counter of blue segments I read about blue segment.
+            Point did intersection of red segment and blue segment.
+            When Point was something:
+                On the 1st page of Point I read about point x.
+                On the 2nd page of Point I read about point y.
+                When point x was not equal to 0 or point y was not equal to 0:
+                    On the page numbered by point counter of points I scribbled Point.
+                    point counter got one more.
+                That's what I did.
+            That's what I did.
+            blue counter got one more.
+        That's what I did.
+        red counter got one more.
+    That's what I did.
+That's about intersections with points.
+
+I learned about calculating Manhattan distance with point:
+    On the first page of point I read about x.
+    On the second page of point I read about y.
+    When x had less than 0:
+        x did the difference of 0 and x.
+    That's what I did.
+    When y had less than 0:
+        y did the difference of 0 and y.
+    That's what I did.
+    distance did the sum of x and y.
+That's about calculating Manhattan distance with distance.
+
+I learned about finding the closest point with points:
+    Did you know that point index is 1?
+    On the first page of points I read about point.
+    Did you know that closest point is point?
+    minimal distance did calculating Manhattan distance of point.
+    I did this while point was something:
+        distance did calculating Manhattan distance of point.
+        When distance had less than minimal distance:
+            Did you know that minimal distance is distance?
+            Did you know that closest point is point?
+        That's what I did.
+        point index got one more.
+        On the page numbered by point index of points I read about point.
+    That's what I did.
+That's about finding the closest point with closest point.
+
+I learned about calculating line length with segment:
+    On the first page of segment I read about first x.
+    On the second page of segment I read about first y.
+    On the third page of segment I read about second x.
+    On the fourth page of segment I read about second y.
+    Did you know that line length is 0?
+
+    When first x is equal to second x:
+        line length did the difference of first y and second y.
+    In the end, I did this instead:
+        line length did the difference of first x and second x.
+    That's what I did.
+
+    When line length had less than 0:
+        line length did the difference of 0 and line length.
+    That's what I did.
+That's about calculating line length with line length.
+
+I learned about checking with point and segment:
+    On the first page of segment I read about first x.
+    On the second page of segment I read about first y.
+    On the third page of segment I read about second x.
+    On the fourth page of segment I read about second y.
+    On the first page of point I read about x.
+    On the second page of point I read about y.
+    Did you know that distance is nothing?
+
+    When first x has less than second x, first x has not more than x, x has not more than second x and y is equal to first y:
+        distance did the difference of x and first x.
+    That's what I did.
+
+    When second x has less than first x, second x has not more than x, x has not more than first x and y is equal to first y:
+        distance did the difference of first x and x.
+    That's what I did.
+    
+    When first y has less than second y, first y has not more than y, y has not more than second y and x is equal to first x:
+        distance did the difference of y and first y.
+    That's what I did.
+
+    When second y has less than first y, second y has not more than y, y has not more than first y and x is equal to first x:
+        distance did the difference of first y and y.
+    That's what I did.
+That's about checking with distance.
+
+I learned about calculating path length with point and segments:
+    Did you know that total length is 0?
+    Did you know that segment index is 1?
+    On the first page of segments I read about segment.
+    I did this while segment was something:
+        Line distance did checking of point and segment.
+        When Line distance is something:
+            Did you know that segment is nothing?
+            total length did the sum of total length and Line distance.
+        In the end, I did this instead:
+            Line length did calculating line length of segment.
+            total length did the sum of total length and Line length.
+            segment index got one more.
+            On the page numbered by segment index of segments I read about segment.
+        That's what I did.
+    That's what I did.
+That's about calculating path length with total length.
+
+I learned about calculating combined path length with point, red segments and blue segments:
+    On the second page of red segments I read about red segments.
+    On the second page of blue segments I read about blue segments.
+
+    Red length did calculating path length of point and red segments.
+    Blue length did calculating path length of point and blue segments.
+
+    total length did sum of Red length and Blue length.
+That's about calculating combined path length with total length.
+
+I learned about finding the closest point by path length with intersections, red segments and blue segments:
+    Did you know intersection index is 1?
+    On the first page of intersections I read about point.
+    Did you know that closest point is point?
+    minimal distance did calculating combined path length of point, red segments and blue segments.
+    I did this while point was something:
+        distance did calculating combined path length of point, red segments and blue segments.
+        When distance had less than minimal distance:
+            Did you know that minimal distance is distance?
+            Did you know that closest point is point?
+        That's what I did.
+        intersection index got one more.
+        On the page numbered by intersection index of intersections I read about point.
+    That's what I did.
+That's about finding the closest point by path length with closest point.
+
+Today I learned about ponies:
+    Did you know that red line is "R1007,D949,R640,D225,R390,D41,R257,D180,L372,U62,L454,U594,L427,U561,R844,D435,L730,U964,L164,U342,R293,D490,L246,U323,L14,D366,L549,U312,L851,U959,L255,U947,L179,U109,R850,D703,L310,U175,L665,U515,R23,D633,L212,U650,R477,U131,L838,D445,R999,D229,L772,U716,L137,U355,R51,D565,L410,D493,L312,U623,L846,D283,R980,U804,L791,U918,L641,U258,R301,U727,L307,U970,L748,U229,L225,U997,L134,D707,L655,D168,L931,D6,R36,D617,L211,D453,L969,U577,R299,D804,R910,D898,R553,U298,L309,D912,R757,U581,R228,U586,L331,D865,R606,D163,R425,U670,R156,U814,L168,D777,R674,D970,L64,U840,L688,U144,L101,U281,L615,D393,R277,U990,L9,U619,L904,D967,L166,U839,L132,U216,R988,U834,R342,U197,L717,U167,L524,U747,L222,U736,L149,D156,L265,U657,L72,D728,L966,U896,R45,D985,R297,U38,R6,D390,L65,D367,R806,U999,L840,D583,R646,U43,L731,D929,L941,D165,R663,U645,L753,U619,R60,D14,L811,D622,L835,U127,L475,D494,R466,U695,R809,U446,R523,D403,R843,U715,L486,D661,L584,U818,L377,D857,L220,U309,R192,U601,R253,D13,L95,U32,L646,D983,R13,U821,L1,U309,L425,U993,L785,U804,L663,U699,L286,U280,R237,U388,L170,D222,L900,U204,R68,D453,R721,U326,L629,D44,R925,D347,R264,D767,L785,U249,R989,D469,L446,D384,L914,U444,R741,U90,R424,U107,R98,U20,R302,U464,L808,D615,R837,U405,L191,D26,R661,D758,L866,D640,L675,U135,R288,D357,R316,D127,R599,U411,R664,D584,L979,D432,R887,D104,R275,D825,L338,D739,R568,D625,L829,D393,L997,D291,L448,D947,L728,U181,L137,D572,L16,U358,R331,D966,R887,D122,L334,D560,R938,D159,R178,D29,L832,D58,R374,"?
+    Did you know that blue line is "L993,U121,L882,U500,L740,D222,R574,U947,L541,U949,L219,D492,R108,D621,L875,D715,R274,D858,R510,U668,R677,U327,L284,U537,L371,U810,L360,U333,L926,D144,R162,U750,L741,D360,R792,D256,L44,D893,R969,D996,L905,D524,R538,U141,R70,U347,L383,U74,R893,D560,L39,U447,L205,D783,L244,D40,R374,U507,L946,D934,R962,D138,L584,U562,L624,U69,L77,D137,L441,U671,L849,D283,L742,D459,R105,D265,R312,D734,R47,D369,R676,D429,R160,D814,L881,D830,R395,U598,L413,U817,R855,D377,L338,D413,L294,U321,L714,D217,L15,U341,R342,D480,R660,D11,L192,U518,L654,U13,L984,D866,R877,U801,R413,U66,R269,D750,R294,D143,R929,D786,R606,U816,L562,U938,R484,U32,R136,U30,L393,U209,L838,U451,L387,U413,R518,D9,L847,D605,L8,D805,R348,D174,R865,U962,R926,U401,R445,U720,L843,U785,R287,D656,L489,D465,L192,U68,L738,U962,R384,U288,L517,U396,L955,U556,R707,U329,L589,U604,L583,U457,R545,D504,L521,U711,L232,D329,L110,U167,R311,D234,R284,D984,L778,D295,R603,U349,R942,U81,R972,D505,L301,U422,R840,U689,R225,D780,R379,D200,R57,D781,R166,U245,L865,U790,R654,D127,R125,D363,L989,D976,R993,U702,L461,U165,L747,U656,R617,D115,L783,U187,L462,U838,R854,D516,L978,U846,R203,D46,R833,U393,L322,D17,L160,D278,R919,U611,L59,U709,L472,U871,L377,U111,L612,D177,R712,U628,R858,D54,L612,D303,R205,U430,R494,D306,L474,U848,R816,D104,L967,U886,L866,D366,L120,D735,R694,D335,R399,D198,R132,D787,L749,D612,R525,U163,R660,U316,R482,D412,L376,U170,R891,D202,R408,D333,R842,U965,R955,U440,L26,U747,R447,D8,R319,D188,L532,D39,L863,D599,R307,U253,R22,"?
+
+    Red segments did parsing of red line.
+    Blue segments did parsing of blue line.
+
+    Intersections did intersections of Red segments and Blue segments.
+
+    Closest point did finding the closest point of Intersections.
+    First answer did calculating Manhattan distance of Closest point.
+    I said "Part 1:".
+    I said: First answer!
+
+    Closest point by path length did finding the closest point by path length of Intersections, Red segments and Blue segments.
+    Second answer did calculating combined path length of Closest point by path length, Red segments and Blue segments.
+    I said "Part2:".
+    I said: Second answer!
+
+Your faithful student, Vytautas.
