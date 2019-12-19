@@ -1,0 +1,1 @@
+gcc -o intc -O2 intc.c -Wall
