@@ -120,7 +120,7 @@ int run(int64_t *program, int memSize)
     int ip = 0;
     int relBase = 0;
     int *argIndices = NULL;
-    expand(&program, &memSize, memSize + 5);
+    expand(&program, &memSize, memSize + 10);
     while (1)
     {
         int curr = program[ip];
@@ -211,7 +211,6 @@ int run(int64_t *program, int memSize)
         }
         if (ip >= memSize)
         {
-            printf("Expanding");
             expand(&program, &memSize, ip + 10);
         }
     }
