@@ -58,7 +58,8 @@ void parseSource(char *source, int64_t **prog, int *progLen)
 
 void expand(int64_t **mem, int *oldSize, int newSize)
 {
-    if (realloc(*mem, newSize * sizeof(int64_t)) == NULL)
+    *mem = (int64_t *)realloc(*mem, newSize * sizeof(int64_t));
+    if (*mem == NULL)
     {
         fprintf(stderr, "Failed to expand memory to size %d\n", newSize);
         return;
@@ -145,7 +146,7 @@ int run(int64_t *program, int memSize, int asciiMode)
         case 3:
             // input
             getArgs(program, ip, relBase, 1, &argIndices);
-            int64_t inp;
+            int inp;
             if (asciiMode)
             {
                 char inpC;
@@ -154,15 +155,19 @@ int run(int64_t *program, int memSize, int asciiMode)
                     fprintf(stderr, "Failed to get input.\n");
                     return ERR_FAILED_STDIN;
                 }
-                inp = (int64_t)inpC;
+                inp = (int)inpC;
             }
             else
             {
-                if (!scanf("%ld", &inp))
+                if (!scanf("%d", &inp))
                 {
-                    fprintf(stderr, "Failed to get input.\n");
-                    return ERR_FAILED_STDIN;
+                    char c;
+                    scanf("%c", &c);
+                    // fprintf(stderr, "Failed to get input. Got '%c', but expected number\n", c);
+                    // return ERR_FAILED_STDIN;
+                    continue;
                 }
+                // fprintf(stderr, "Got input %d\n", inp);
             }
             program[argIndices[0]] = inp;
             ip += 2;
@@ -178,6 +183,7 @@ int run(int64_t *program, int memSize, int asciiMode)
             {
                 printf("%ld\n", program[argIndices[0]]);
             }
+            fflush(stdout);
             ip += 2;
             break;
         case 5:
@@ -224,10 +230,12 @@ int run(int64_t *program, int memSize, int asciiMode)
             break;
         case 99:
             free(argIndices);
+            // free(program);
             return 0;
         default:
             fprintf(stderr, "Unrecognized opcode %d at position %d.\n", opcode, ip);
             free(argIndices);
+            // free(program);
             return ERR_UNKNOWN_OPCODE;
         }
         if (ip >= memSize)
@@ -263,6 +271,5 @@ int main(int argc, char *argv[])
 
     free(source);
     int result = run(program, programLength, asciiMode);
-    // free(program);
     return result;
 }
