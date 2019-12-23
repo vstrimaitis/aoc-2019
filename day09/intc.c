@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 
 const int ERR_CANNOT_OPEN_FILE = 1;
 const int ERR_UNKNOWN_OPCODE = 2;
@@ -115,7 +116,7 @@ void dumpMemory(int64_t *mem, int size)
     printf("\n");
 }
 
-int run(int64_t *program, int memSize)
+int run(int64_t *program, int memSize, int asciiMode)
 {
     int ip = 0;
     int relBase = 0;
@@ -145,10 +146,23 @@ int run(int64_t *program, int memSize)
             // input
             getArgs(program, ip, relBase, 1, &argIndices);
             int64_t inp;
-            if (!scanf("%ld", &inp))
+            if (asciiMode)
             {
-                fprintf(stderr, "Failed to get input.\n");
-                return ERR_FAILED_STDIN;
+                char inpC;
+                if (!scanf("%c", &inpC))
+                {
+                    fprintf(stderr, "Failed to get input.\n");
+                    return ERR_FAILED_STDIN;
+                }
+                inp = (int64_t)inpC;
+            }
+            else
+            {
+                if (!scanf("%ld", &inp))
+                {
+                    fprintf(stderr, "Failed to get input.\n");
+                    return ERR_FAILED_STDIN;
+                }
             }
             program[argIndices[0]] = inp;
             ip += 2;
@@ -156,7 +170,14 @@ int run(int64_t *program, int memSize)
         case 4:
             // output
             getArgs(program, ip, relBase, 1, &argIndices);
-            printf("%ld\n", program[argIndices[0]]);
+            if (asciiMode && program[argIndices[0]] <= 255)
+            {
+                printf("%c", (char)program[argIndices[0]]);
+            }
+            else
+            {
+                printf("%ld\n", program[argIndices[0]]);
+            }
             ip += 2;
             break;
         case 5:
@@ -218,10 +239,15 @@ int run(int64_t *program, int memSize)
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
+    if (argc < 2 || argc > 3 || (argc == 3 && strcmp(argv[2], "--ascii") != 0))
     {
-        printf("Usage: intc <intcode-file>\n");
+        printf("Usage: intc <intcode-file> <--ascii>\n");
         return 0;
+    }
+    int asciiMode = 0;
+    if (argc == 3)
+    {
+        asciiMode = 1;
     }
     char *source;
     readFile(argv[1], &source);
@@ -235,8 +261,8 @@ int main(int argc, char *argv[])
     int programLength;
     parseSource(source, &program, &programLength);
 
-    int result = run(program, programLength);
     free(source);
-    free(program);
+    int result = run(program, programLength, asciiMode);
+    // free(program);
     return result;
 }
