@@ -58,6 +58,8 @@ void parseSource(char *source, int64_t **prog, int *progLen)
 
 void expand(int64_t **mem, int *oldSize, int newSize)
 {
+    if (newSize <= *oldSize)
+        return;
     *mem = (int64_t *)realloc(*mem, newSize * sizeof(int64_t));
     if (*mem == NULL)
     {
@@ -122,9 +124,12 @@ int run(int64_t *program, int memSize, int asciiMode)
     int ip = 0;
     int relBase = 0;
     int *argIndices = NULL;
-    expand(&program, &memSize, memSize + 10);
     while (1)
     {
+        if (ip >= memSize)
+        {
+            expand(&program, &memSize, ip + 1);
+        }
         int curr = program[ip];
         int opcode = curr % 100;
         // printf("ip=%d, relBase=%d\n", ip, relBase);
@@ -134,18 +139,25 @@ int run(int64_t *program, int memSize, int asciiMode)
         case 1:
             // add
             getArgs(program, ip, relBase, 3, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
+            expand(&program, &memSize, argIndices[1] + 1);
+            expand(&program, &memSize, argIndices[2] + 1);
             program[argIndices[2]] = program[argIndices[0]] + program[argIndices[1]];
             ip += 4;
             break;
         case 2:
             // multiply
             getArgs(program, ip, relBase, 3, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
+            expand(&program, &memSize, argIndices[1] + 1);
+            expand(&program, &memSize, argIndices[2] + 1);
             program[argIndices[2]] = program[argIndices[0]] * program[argIndices[1]];
             ip += 4;
             break;
         case 3:
             // input
             getArgs(program, ip, relBase, 1, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
             int inp;
             if (asciiMode)
             {
@@ -175,6 +187,7 @@ int run(int64_t *program, int memSize, int asciiMode)
         case 4:
             // output
             getArgs(program, ip, relBase, 1, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
             if (asciiMode && program[argIndices[0]] <= 255)
             {
                 printf("%c", (char)program[argIndices[0]]);
@@ -189,6 +202,8 @@ int run(int64_t *program, int memSize, int asciiMode)
         case 5:
             // jump if true
             getArgs(program, ip, relBase, 2, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
+            expand(&program, &memSize, argIndices[1] + 1);
             if (program[argIndices[0]] != 0)
             {
                 ip = program[argIndices[1]];
@@ -201,6 +216,8 @@ int run(int64_t *program, int memSize, int asciiMode)
         case 6:
             // jump if false
             getArgs(program, ip, relBase, 2, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
+            expand(&program, &memSize, argIndices[1] + 1);
             if (program[argIndices[0]] == 0)
             {
                 ip = program[argIndices[1]];
@@ -213,34 +230,37 @@ int run(int64_t *program, int memSize, int asciiMode)
         case 7:
             // less than
             getArgs(program, ip, relBase, 3, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
+            expand(&program, &memSize, argIndices[1] + 1);
+            expand(&program, &memSize, argIndices[2] + 1);
             program[argIndices[2]] = program[argIndices[0]] < program[argIndices[1]];
             ip += 4;
             break;
         case 8:
             // equals
             getArgs(program, ip, relBase, 3, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
+            expand(&program, &memSize, argIndices[1] + 1);
+            expand(&program, &memSize, argIndices[2] + 1);
             program[argIndices[2]] = program[argIndices[0]] == program[argIndices[1]];
             ip += 4;
             break;
         case 9:
             // adjust relative base
             getArgs(program, ip, relBase, 1, &argIndices);
+            expand(&program, &memSize, argIndices[0] + 1);
             relBase += program[argIndices[0]];
             ip += 2;
             break;
         case 99:
             free(argIndices);
-            // free(program);
+            free(program);
             return 0;
         default:
             fprintf(stderr, "Unrecognized opcode %d at position %d.\n", opcode, ip);
             free(argIndices);
-            // free(program);
+            free(program);
             return ERR_UNKNOWN_OPCODE;
-        }
-        if (ip >= memSize)
-        {
-            expand(&program, &memSize, ip + 10);
         }
     }
 }
