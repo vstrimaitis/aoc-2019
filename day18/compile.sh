@@ -1,0 +1,1 @@
+g++ -std=c++17 -O2 -DLOCAL -o sol sol.cpp
